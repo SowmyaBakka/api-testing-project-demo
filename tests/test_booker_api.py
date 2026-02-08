@@ -16,5 +16,5 @@ class TestBookerCRUD(TestBookerBase):
         data = resp.json()
         assert isinstance(data,list)
         assert len(data)>0
-    def test_create_and_get_new_booking(self,booker_client,sample_booking_payload):
-        resp = booker_client.
+    # def test_create_and_get_new_booking(self,booker_client,sample_booking_payload):
+    #     resp = booker_client.
