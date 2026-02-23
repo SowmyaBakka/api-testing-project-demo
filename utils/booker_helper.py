@@ -11,7 +11,8 @@ class BookHelper:
         response = self.session.post(f"{self.BASE_URL}/auth",json=payload)
         if response.status_code ==200:
             self.token = response.json().get("token")
-            self.session.headers.update({"Authorization": f"Basic YWRtaW46cGFzc3dvcmQxMjM="})
+            self.session.headers.update({"Cookie": f"token={self.token}"})
+            #self.session.headers.update({"Authorization": f"Basic YWRtaW46cGFzc3dvcmQxMjM="})
             return self.token
     def get_bookings(self,params=None):
         """ Get all bookings"""
